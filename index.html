@@ -1,38 +1,55 @@
-
 <html>
-<head><link rel="stylesheet" href="/css/signup.css"> </head>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<h1>
+    
+      
+       
+        <%- style %>
+    </head>
+    <body>
+        <%- include('_header'); %>
 
-    Sign Up
-</h1>
 
-<div id = "form" >
-<form action="/users/create" method = "POST">
-<div>
- <label for="email"> What's your email?</label> <br> <br>
- <input type="email" name= "email" id="email" placeholder="Your Email" required> 
-</div>
-<br>
-<div>
- <label for="name">What should we call you?</label> <br> <br>
-<input type="text" name= "name" id="name" placeholder="Your Name" required>
+           <main id = "layout-main">
+            <%- body %>
+            </main>
 
-</div>
-<br>
-<div>
-<label for="password"> Create a password </label> <br> <br>
-<input type="password" name= "password" id="password" placeholder="Password" required>
-</div>
-<br>
-<div>
-<label for="confirm"> Confirm your password</label> <br> <br>
-<input type="password" name= "confirm_password" id="confirm" placeholder="Confirm Password" required>
-</div>
-<br>
-<input type="submit" value="Sign Up">
+          
 
- </form>
-</div>
+          <%- script %>
+          <script>
+              <% if(flash.success && flash.success.length > 0) { %>
 
+                new Noty({
+                   theme: 'relax',
+                  text: "<%= flash.success %>",
+                  type: 'success',
+                  layout: 'topRight',
+                  timeout: 1500
+                }).show();
+
+
+                <% } %>
+
+                <% if(flash.error && flash.error.length > 0) { %>
+
+                    new Noty({
+                    theme: 'relax',
+                    text: "<%= flash.error %>",
+                    type: 'error',
+                    layout: 'topRight',
+                      timeout: 1500
+                       }).show();
+
+
+                 <% } %>
+
+          </script>
+    </body>
 </html>
