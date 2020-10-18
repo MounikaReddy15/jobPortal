@@ -1,55 +1,21 @@
-<html>
-    <head>
-        <title>
-            <%= title %>
-        </title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/css/header.css">
+<header>
+   
 
-    
-      
-       
-        <%- style %>
-    </head>
-    <body>
-        <%- include('_header'); %>
+    <ul>
+        <% if(locals.user)  {%> 
+           
+           <li> <a href = '/users/sign-out'> Sign Out </a>  </li>
+           
 
+            <% } else {%>
+                 
+                <li> <a href = '/users/sign-in'> Log In </a>  </li>
 
-           <main id = "layout-main">
-            <%- body %>
-            </main>
-
-          
-
-          <%- script %>
-          <script>
-              <% if(flash.success && flash.success.length > 0) { %>
-
-                new Noty({
-                   theme: 'relax',
-                  text: "<%= flash.success %>",
-                  type: 'success',
-                  layout: 'topRight',
-                  timeout: 1500
-                }).show();
+                <li> <a href = '/users/sign-up'> Sign Up </a>  </li>
 
 
-                <% } %>
-
-                <% if(flash.error && flash.error.length > 0) { %>
-
-                    new Noty({
-                    theme: 'relax',
-                    text: "<%= flash.error %>",
-                    type: 'error',
-                    layout: 'topRight',
-                      timeout: 1500
-                       }).show();
-
-
-                 <% } %>
-
-          </script>
-    </body>
-</html>
+                <% } %>   
+                
+    </ul>
+</header>
