@@ -1,0 +1,53 @@
+
+<link rel="stylesheet" href="/css/signup.css">
+
+<h1>
+
+    Hire Portal
+</h1>
+
+<div id = "form" >
+<form action="/users/createJob" method = "POST">
+<div>
+ <label for="job-role"> Enter Type of Role</label> <br> <br>
+ <input type="text" name= "job-role"  id= "job-role" placeholder="Eg: Software, Full-Stack" required> 
+</div>
+<br>
+<div>
+ <label for="company">Name of the Company</label> <br> <br>
+<input type="text" name= "company" id="company" placeholder="Eg: Corner Tress" required>
+
+</div>
+<br>
+
+<div>
+    <label for="Core-Skills">Top 3 Core Skills</label> <br> <br>
+   <input type="text" name= "Core-Skills"id="Core-Skills" placeholder="Eg: Java, Node.js" required>
+   
+   </div>
+   <br>
+
+   <div>
+    <label for="Soft-Skills">Top 3 Soft Skills</label> <br> <br>
+   <input type="text" name= "Soft-Skills" id="Soft-Skills" placeholder="Eg: Communication " required>
+   
+   </div>
+   <br>
+
+<div>
+<label for="address">  Enter Your Address </label> <br> <br>
+<input type="text" name= "address"id="address" placeholder="Eg: H.No, street,.." required>
+</div>
+<br>
+<div>
+<label for="zip=code"> Enter Zip-Code</label> <br> <br>
+<input type="number" name= "zip-code" id="zip-code" placeholder="Eg: 500183" required>
+</div>
+<br>
+<input type="submit" >
+
+ </form>
+</div>
+ 
+<!-- <p> or </p>
+  <button>  <a href="/users/auth/google"> Google Sign In/ Sign Up </a> </button> -->
