@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 // to run express funct
 const app= express(); 
 
-const port = 9000;
+const port = process.env.PORT || 9000;
 
 //require express layout
 //for dynamic scripts and styles
