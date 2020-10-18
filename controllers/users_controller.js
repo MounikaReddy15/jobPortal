@@ -30,11 +30,7 @@ module.exports.hirePortal = function(req,res) {
 //   Hire.findOne({
 //     email : req.body.email
 //     // role : req.body.role,
-//     // company : req.body.company,
-//     // core : req.body.core,
-//     // soft : req.body.soft,
-//     // address: req.body.address,
-//     // zip: req.body.zip
+
 //   }, function(err, hire) {
 //     if(err) {
 //         console.log('error in finding user signing up');
